@@ -14,7 +14,7 @@ headers = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (K
 获取12306的验证码图片并保存
 '''
 def get_org_img():
-	pic_url = "https://kyfw.12306.cn/otn/passcodeNew/getPassCodeNew?module=login&rand=sjrand&0.21191171556711197"
+	pic_url = "https://kyfw.12306.cn/otn/passcodeNew/getPassCodeNew?module=login&rand=sjrand&0.21191171556711125"
 	resp = request.urlopen(pic_url)
 	raw = resp.read()
 	with open("./tmp.jpg", 'wb') as fp:
