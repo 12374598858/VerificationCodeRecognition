@@ -1,0 +1,2 @@
+# VerificationCodeRecognition
+调用百度ocr识别图片验证码，这里是使用12306的图片验证为例写的
