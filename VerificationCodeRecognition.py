@@ -24,9 +24,9 @@ def get_org_img():
 利用百度ocr识别图片内容(比如这是花还是树这类)
 '''
 def baidu_img_realize(filepath):
-	APP_ID ='15286086'  
-	API_KEY ='XQGvq71U1KFCWmjbmiIop0Gf'  
-	SECRET_KEY ='GpMt0AgUWqT1TG6BWWmPYRPIuoD1FCuD '
+	APP_ID = APP_ID  
+	API_KEY = API_KEY 
+	SECRET_KEY = SECRET_KEY
 	aipimg = AipImageClassify(APP_ID, API_KEY, SECRET_KEY)
 	options = {}
 	image = get_file_content(filepath)
@@ -86,9 +86,9 @@ def make_answer_img(question):
 利用百度ocr识别图片中的文字获取验证问题
 '''
 def baidu_img_tostring(filePath):
-	APP_ID ='15283829'  
-	API_KEY ='Qm1aV5830r5ZMn7T1joucuPN'  
-	SECRET_KEY ='GCvUxaNLfYR6AG69GSVM2L4fVeuR401j'
+	APP_ID = APP_ID
+	API_KEY = API_KEY
+	SECRET_KEY = SECRET_KEY
 	aipOcr = AipOcr(APP_ID, API_KEY, SECRET_KEY)
 	options = {  
 	'detect_direction': 'true',  
