@@ -53,6 +53,23 @@ def make_question_img():
 	return filePath
 
 '''
+利用百度ocr识别图片中的文字获取验证问题
+'''
+def baidu_img_tostring(filePath):
+	APP_ID = APP_ID
+	API_KEY = API_KEY
+	SECRET_KEY = SECRET_KEY
+	aipOcr = AipOcr(APP_ID, API_KEY, SECRET_KEY)
+	options = {  
+	'detect_direction': 'true',  
+	'language_type': 'CHN_ENG',  
+	}
+	result = aipOcr.basicGeneral(get_file_content(filePath), options) 
+	question = result['words_result'][0]['words']
+	return question
+
+
+'''
 截取答案图片
 识别答案图片内容
 对比问题，输出结果像素位置
@@ -82,22 +99,6 @@ def make_answer_img(question):
 						break
 	return code
 
-'''
-利用百度ocr识别图片中的文字获取验证问题
-'''
-def baidu_img_tostring(filePath):
-	APP_ID = APP_ID
-	API_KEY = API_KEY
-	SECRET_KEY = SECRET_KEY
-	aipOcr = AipOcr(APP_ID, API_KEY, SECRET_KEY)
-	options = {  
-	'detect_direction': 'true',  
-	'language_type': 'CHN_ENG',  
-	}
-	result = aipOcr.basicGeneral(get_file_content(filePath), options) 
-	question = result['words_result'][0]['words']
-	return question
-	
 
 '''
 提交验证码结果
